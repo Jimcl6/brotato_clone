@@ -9,6 +9,9 @@ radius = 30.0
 
 [node name="Player" instance=ExtResource("1_u0ye3")]
 script = ExtResource("2_e0rju")
+dash_duration = 0.5
+dash_speed_multi = 0.5
+dash_cooldown = 0.5
 
 [node name="Sprite" parent="Visuals" index="1"]
 texture = ExtResource("2_ve8p5")
@@ -18,3 +21,7 @@ position = Vector2(0, -30)
 shape = SubResource("CircleShape2D_e0rju")
 
 [node name="DashTimer" type="Timer" parent="." index="3"]
+one_shot = true
+
+[node name="DashCoolDownTimer" type="Timer" parent="." index="4"]
+one_shot = true
