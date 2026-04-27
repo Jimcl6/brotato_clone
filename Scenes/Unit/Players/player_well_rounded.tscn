@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://3a0p0xb6urmp"]
+
+[ext_resource type="PackedScene" uid="uid://n7xfyrm5e0m6" path="res://Scenes/Unit/unit.tscn" id="1_u0ye3"]
+[ext_resource type="Script" uid="uid://dql6j8hdi56wg" path="res://Scenes/Unit/Players/player.gd" id="2_e0rju"]
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://Assets/sprites/Players/Player_1.png" id="2_ve8p5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0rju"]
+radius = 30.0
+
+[node name="Player" instance=ExtResource("1_u0ye3")]
+script = ExtResource("2_e0rju")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_ve8p5")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_e0rju")
+
+[node name="DashTimer" type="Timer" parent="." index="3"]

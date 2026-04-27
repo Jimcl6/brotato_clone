@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6nolwqlami52"
+path="res://.godot/imported/UI Pop.mp3-96764a9363c90d7fbbbb77f245b2a1bb.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/UI Pop.mp3"
+dest_files=["res://.godot/imported/UI Pop.mp3-96764a9363c90d7fbbbb77f245b2a1bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
