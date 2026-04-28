@@ -21,7 +21,13 @@ func _process(delta: float) -> void:
 	move_dir = Input.get_vector("move_left","move_right","move_up","move_down")
 	
 	var curr_velocity := move_dir * 500
+	if is_dashing:
+		curr_velocity *= dash_speed_multi
+	
 	position += curr_velocity * delta
+	
+	if can_dash():
+		start_dash()
 	
 	update_animations()
 	update_rotation()
@@ -44,3 +50,19 @@ func update_rotation() -> void:
 func start_dash() -> void:
 	is_dashing = true
 	dash_timer.start()
+	visuals.modulate.a = 0.5
+	collision_shape_2d.set_deferred("disabled", true)
+
+func can_dash() -> bool:
+	return not is_dashing and\
+	dash_cool_down_timer.is_stopped() and\
+	Input.is_action_just_pressed("dash") and\
+	move_dir != Vector2.ZERO
+
+
+func _on_dash_timer_timeout() -> void:
+	is_dashing = false
+	visuals.modulate.a = 1
+	move_dir = Vector2.ZERO
+	collision_shape_2d.set_deferred("disabled", false)
+	dash_cool_down_timer.start()
