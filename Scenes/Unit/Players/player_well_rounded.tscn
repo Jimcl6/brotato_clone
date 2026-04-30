@@ -28,7 +28,7 @@ width = 50.0
 width_curve = SubResource("Curve_dagiw")
 script = ExtResource("4_xl0jw")
 player = NodePath("../..")
-trail_duration = 0.5
+trail_duration = 1.5
 
 [node name="Shadow" parent="Visuals" index="1"]
 z_index = 1
