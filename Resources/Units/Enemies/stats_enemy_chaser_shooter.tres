@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://be56owewgn8xr"]
+
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/sprites/Enemies/Enemy_4.png" id="1_tckff"]
+[ext_resource type="Script" uid="uid://bv0re8026xkga" path="res://Resources/Units/unit_stats.gd" id="2_frp6s"]
+
+[resource]
+script = ExtResource("2_frp6s")
+name = "Chaser Shooter"
+type = 1
+icon = ExtResource("1_tckff")
+health = 4
+health_increased_per_wave = 2
+damage = 3.0
+damage_increased_per_wave = 1.5
+speed = 260
+luck = 0.0
+block_chance = 3.0
+gold_drop = 3
+metadata/_custom_type_script = "uid://bv0re8026xkga"

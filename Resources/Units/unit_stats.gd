@@ -16,8 +16,8 @@ enum UnitType {
 @export var health := 1
 @export var health_increased_per_wave := 1
 #Damage
-@export var damage := 1
-@export var damage_increased_per_wave := 1
+@export var damage := 1.0
+@export var damage_increased_per_wave := 1.0
 
 #speed
 @export var speed := 300
