@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://n7xfyrm5e0m6"]
+[gd_scene load_steps=9 format=3 uid="uid://n7xfyrm5e0m6"]
 
 [ext_resource type="Texture2D" uid="uid://devt2xbk78rej" path="res://Assets/sprites/shadow.png" id="1_15sed"]
 [ext_resource type="Script" uid="uid://boilcj63yrbdy" path="res://Scenes/Unit/unit.gd" id="1_ladk0"]
+[ext_resource type="Script" uid="uid://bwudiulhgx0cp" path="res://hurt_box_component.gd" id="3_ladk0"]
 
 [sub_resource type="Animation" id="Animation_ladk0"]
 length = 0.001
@@ -246,3 +247,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_ladk0")
 }
 autoplay = "idle"
+
+[node name="HurtBoxComponent" type="Area2D" parent="."]
+script = ExtResource("3_ladk0")
+metadata/_custom_type_script = "uid://bwudiulhgx0cp"

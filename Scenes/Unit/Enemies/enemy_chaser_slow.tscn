@@ -1,20 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://tf2mpedmkhk4"]
+[gd_scene load_steps=9 format=3 uid="uid://tf2mpedmkhk4"]
 
 [ext_resource type="PackedScene" uid="uid://n7xfyrm5e0m6" path="res://Scenes/Unit/unit.tscn" id="1_l44f3"]
 [ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://Assets/sprites/Enemies/Enemy_1.png" id="2_1aa4w"]
-[ext_resource type="Resource" uid="uid://cd2be1issms7w" path="res://Resources/Units/Enemies/stats_enemy_chaser_slow.tres" id="2_d2d6u"]
+[ext_resource type="Script" uid="uid://tkcqactdpc21" path="res://Scenes/Unit/Enemies/enemy.gd" id="2_d2d6u"]
+[ext_resource type="Resource" uid="uid://cd2be1issms7w" path="res://Resources/Units/Enemies/stats_enemy_chaser_slow.tres" id="3_d2d6u"]
+[ext_resource type="Script" uid="uid://dx7egwsxdi8p2" path="res://Scenes/Components/hit_box_component.gd" id="5_68fhd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68fhd"]
+radius = 27.018513
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2d6u"]
 radius = 150.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vl2t"]
+radius = 40.024994
+
 [node name="EnemyChaserSlow" instance=ExtResource("1_l44f3")]
-stats = ExtResource("2_d2d6u")
+collision_layer = 2
+script = ExtResource("2_d2d6u")
+flock_push = 20.0
+stats = ExtResource("3_d2d6u")
 
 [node name="Sprite" parent="Visuals" index="1"]
 texture = ExtResource("2_1aa4w")
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_68fhd")
+debug_color = Color(0.940589, 0.15480971, 0.48058343, 0.41960785)
+
 [node name="VisualArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisualArea" index="0"]
 position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_d2d6u")
+
+[node name="HitBoxComponent" type="Area2D" parent="." index="5"]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("5_68fhd")
+metadata/_custom_type_script = "uid://dx7egwsxdi8p2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" index="0"]
+z_index = 1
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_7vl2t")
+debug_color = Color(0, 0.8235294, 0.21568628, 0.48235294)
