@@ -23,10 +23,11 @@ texture = ExtResource("2_rm3sm")
 script = ExtResource("4_rm3sm")
 
 [node name="EnemyChaserSlow" parent="." instance=ExtResource("6_11not")]
-position = Vector2(-58, -5)
+position = Vector2(-473, 56)
+collision_layer = 1
 
 [node name="EnemyChaserSlow2" parent="." instance=ExtResource("6_11not")]
-position = Vector2(-610, 324)
+position = Vector2(-680, 304)
 
 [node name="EnemyChaserSlow3" parent="." instance=ExtResource("6_11not")]
-position = Vector2(-591, -181)
+position = Vector2(-661, -201)

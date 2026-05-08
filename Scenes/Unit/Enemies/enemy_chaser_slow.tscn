@@ -7,13 +7,13 @@
 [ext_resource type="Script" uid="uid://dx7egwsxdi8p2" path="res://Scenes/Components/hit_box_component.gd" id="5_68fhd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_68fhd"]
-radius = 27.018513
+radius = 30.016663
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2d6u"]
 radius = 150.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vl2t"]
-radius = 40.024994
+radius = 30.066593
 
 [node name="EnemyChaserSlow" instance=ExtResource("1_l44f3")]
 collision_layer = 2
@@ -37,6 +37,10 @@ collision_mask = 2
 position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_d2d6u")
 
+[node name="HurtBoxComponent" parent="." index="4"]
+collision_layer = 0
+collision_mask = 0
+
 [node name="HitBoxComponent" type="Area2D" parent="." index="5"]
 collision_layer = 16
 collision_mask = 8
@@ -44,7 +48,9 @@ script = ExtResource("5_68fhd")
 metadata/_custom_type_script = "uid://dx7egwsxdi8p2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" index="0"]
-z_index = 1
 position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_7vl2t")
-debug_color = Color(0, 0.8235294, 0.21568628, 0.48235294)
+debug_color = Color(0, 0.6431373, 0.32941177, 0.48235294)
+
+[connection signal="area_entered" from="HitBoxComponent" to="." method="_on_hit_box_component_area_entered"]
+[connection signal="area_entered" from="HitBoxComponent" to="HitBoxComponent" method="_on_area_entered"]

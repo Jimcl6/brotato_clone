@@ -11,7 +11,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0rju"]
-radius = 30.0
+radius = 36.013885
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xl0jw"]
 radius = 30.016663
@@ -67,3 +67,4 @@ shape = SubResource("CircleShape2D_xl0jw")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="TrailTimer" to="Visuals/Trail" method="_on_trail_timer_timeout"]
+[connection signal="area_entered" from="HurtBoxComponent" to="HurtBoxComponent" method="_on_area_entered"]
