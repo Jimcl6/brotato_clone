@@ -6,3 +6,17 @@ class_name Unit
 @onready var visuals: Node2D = %Visuals
 @onready var sprite: Sprite2D = %Sprite
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+
+@onready var health_component: HealthComponent = $HealthComponent
+
+
+func _ready() -> void:
+	health_component.setup(stats)
+
+
+func _on_hurt_box_component_on_damaged(hitBox: HitboxComponent) -> void:
+	if health_component.current_health <= 0:
+		return
+		
+	health_component.take_damage(hitBox.dmg)
+	print("%s: %d"% [name, health_component.current_health])
