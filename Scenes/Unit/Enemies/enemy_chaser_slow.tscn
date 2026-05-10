@@ -52,5 +52,9 @@ position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_7vl2t")
 debug_color = Color(0, 0.6431373, 0.32941177, 0.48235294)
 
+[node name="HealthBar" parent="." index="7"]
+back_color = Color(0.015686275, 0.05490196, 0.16862746, 1)
+fill_color = Color(0.37254903, 0.59607846, 0.75686276, 1)
+
 [connection signal="area_entered" from="HitBoxComponent" to="." method="_on_hit_box_component_area_entered"]
 [connection signal="area_entered" from="HitBoxComponent" to="HitBoxComponent" method="_on_area_entered"]
